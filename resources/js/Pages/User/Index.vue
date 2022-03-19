@@ -52,9 +52,12 @@
                                             Show
                                         </jet-button>
                                     </Link>
-                                    <jet-button class="bg-red-500">
-                                        Delete
-                                    </jet-button>
+                                    <Link :href="route('users.edit',user.id)">
+                                        <jet-button class="bg-yellow-500 mr-2">
+                                            Edit
+                                        </jet-button>
+                                    </Link>
+
                                 </td>
                             </tr>
                             <!-- More people... -->
