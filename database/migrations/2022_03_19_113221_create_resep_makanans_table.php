@@ -22,14 +22,14 @@ class CreateResepMakanansTable extends Migration
             $table->timestamps();
         });
 
-        //relasi ke tabel resep_kategoris
-        Schema::table('resep_makanans',function (Blueprint $table){
-            $table->foreign('kategori_id')->reference('id')->on('resep_kategoris')->onUpdate('cascade')->onDelete('cascade');
+        //relasi ke tabel kategoris
+        Schema::table('resep_makanans', function (Blueprint $table) {
+            $table->foreign('kategori_id')->references('id')->on('resep_kategoris')->onUpdate('cascade')->onDelete('cascade');
         });
 
         //relasi ke tabel users
         Schema::table('resep_makanans',function (Blueprint $table){
-            $table->foreign('user_id')->reference('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
         });
 
     }

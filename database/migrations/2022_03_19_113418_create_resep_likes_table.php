@@ -22,12 +22,12 @@ class CreateResepLikesTable extends Migration
 
         //relasi ke tabel resep_makanans
         Schema::table('resep_likes',function (Blueprint $table){
-            $table->foreign('resep_makanan_id')->reference('id')->on('resep_makanans')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('resep_makanan_id')->references('id')->on('resep_makanans')->onUpdate('cascade')->onDelete('cascade');
         });
 
         //relasi ke tabel users
         Schema::table('resep_likes',function (Blueprint $table){
-            $table->foreign('user_id')->reference('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 

@@ -67,4 +67,19 @@ class User extends Authenticatable
     public function getUpdatedAtAttribute($value){
         return now()->parse($value)->timezone(config('app.timezone'))->format('d F Y, H:i:s');
     }
+
+
+     /**
+     * @return \Illuminate\Database\Eloquent\Relations\hasMany
+     */
+    public function resepMakanan(){
+        return $this->hasMany('App\Models\ResepMakanan', 'user_id', 'id');
+    }
+
+     /**
+     * @return \Illuminate\Database\Eloquent\Relations\hasMany
+     */
+    public function resepLikes(){
+        return $this->hasMany('App\Models\ResepLikes', 'user_id', 'id');
+    }
 }

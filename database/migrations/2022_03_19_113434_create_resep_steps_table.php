@@ -24,7 +24,7 @@ class CreateResepStepsTable extends Migration
 
         //relasi ke tabel resep_makanans
         Schema::table('resep_steps',function (Blueprint $table){
-            $table->foreign('resep_makanan_id')->reference('id')->on('resep_makanans')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('resep_makanan_id')->references('id')->on('resep_makanans')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 

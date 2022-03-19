@@ -20,9 +20,9 @@ class CreateResepGambarsTable extends Migration
             $table->timestamps();
         });
 
-        //relasi ke tabel resep_kategoris
+        //relasi ke tabel resep_makanans
         Schema::table('resep_gambars',function (Blueprint $table){
-            $table->foreign('resep_makanan_id')->reference('id')->on('resep_makanans')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('resep_makanan_id')->references('id')->on('resep_makanans')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 
